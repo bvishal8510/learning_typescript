@@ -1,0 +1,16 @@
+{
+  "name": "learning_typescript",
+  "version": "1.0.0",
+  "description": "This is a repository to learn typescript",
+  "main": "demo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "types": "./demo.d.ts",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
