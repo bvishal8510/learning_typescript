@@ -1,21 +1,6 @@
 // let msg;
 // msg = 1;
 // console.log(msg);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 // class demo {
 //     private num1: number = 2;
 //     public num3: number = 4;
@@ -235,31 +220,41 @@ var __extends = (this && this.__extends) || (function () {
 // let demo = new Demo();
 // demo.name="Vishal Baghel";
 // console.log(demo.name);
-var Animal = /** @class */ (function () {
-    function Animal() {
-    }
-    Animal.prototype.sound = function () { };
-    ;
-    Animal.prototype.move = function () {
-        console.log("Animal is moving");
-    };
-    ;
-    return Animal;
-}());
-var Dog = /** @class */ (function (_super) {
-    __extends(Dog, _super);
-    function Dog() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Dog.prototype.sound = function () {
-        return "Woof!";
-    };
-    Dog.prototype.run = function () {
-        console.log("Dog is running");
-    };
-    return Dog;
-}(Animal));
-var dog = new Dog();
-console.log(dog.sound());
-dog.move();
-dog.run();
+// // Abstract classes are blueprint of other classes that are extended and cannot be instantiated directly. They can contain both abstract methods (without implementation) and concrete methods (with implementation). Subclasses must implement the abstract methods defined in the abstract class.
+// abstract class Animal {
+//     sound(): void {};
+//     move(): void {
+//         console.log("Animal is moving");
+//     };
+// }
+// class Dog extends Animal {
+//     sound(): string {
+//         return "Woof!";
+//     }
+//     run():void {
+//         console.log("Dog is running");
+//     }
+// }
+// let dog = new Dog();
+// console.log(dog.sound());
+// dog.move();
+// dog.run();
+// // let animal = new Animal(); // gives error as abstract class cannot be instantiated directly
+// In TypeScript, interfaces define the structure that classes must adhere to, ensuring consistent object shapes and facilitating type-checking.
+// 1. Interfaces declare properties and methods without implementations, serving as contracts for classes to implement.
+// 2. Classes use the implements keyword to adhere to an interface, providing concrete implementations for the declared members.\
+// Generics in ts
+function displayData(parameter) {
+    return parameter;
+}
+console.log(displayData("hello"));
+console.log(displayData(1));
+function displayDataArray(parameter) {
+    // parameter.push(34);
+    return parameter;
+}
+var list = displayDataArray(["Vishal", "Namrata"]);
+console.log(list);
+list.push("Varsha");
+console.log(list);
+console.log(displayDataArray([1, 2, 3]));

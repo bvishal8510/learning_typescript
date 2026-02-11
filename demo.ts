@@ -260,3 +260,22 @@
 // dog.run();
 // // let animal = new Animal(); // gives error as abstract class cannot be instantiated directly
 
+// In TypeScript, interfaces define the structure that classes must adhere to, ensuring consistent object shapes and facilitating type-checking.
+// 1. Interfaces declare properties and methods without implementations, serving as contracts for classes to implement.
+// 2. Classes use the implements keyword to adhere to an interface, providing concrete implementations for the declared members.\
+
+// Generics in ts
+function displayData <type_parameter> (parameter: type_parameter) : type_parameter {
+    return parameter;
+}
+console.log(displayData <string> ("hello"));
+console.log(displayData <number> (1));
+function displayDataArray <type_parameter> (parameter: type_parameter[]) : type_parameter[] {
+    // parameter.push(34);
+    return parameter;
+}
+let list = displayDataArray <string> (["Vishal","Namrata"]);
+console.log(list);
+list.push("Varsha");
+console.log(list);
+console.log(displayDataArray <number> ([1,2,3]));
