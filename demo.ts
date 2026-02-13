@@ -264,18 +264,80 @@
 // 1. Interfaces declare properties and methods without implementations, serving as contracts for classes to implement.
 // 2. Classes use the implements keyword to adhere to an interface, providing concrete implementations for the declared members.\
 
-// Generics in ts
-function displayData <type_parameter> (parameter: type_parameter) : type_parameter {
-    return parameter;
-}
-console.log(displayData <string> ("hello"));
-console.log(displayData <number> (1));
-function displayDataArray <type_parameter> (parameter: type_parameter[]) : type_parameter[] {
-    // parameter.push(34);
-    return parameter;
-}
-let list = displayDataArray <string> (["Vishal","Namrata"]);
-console.log(list);
-list.push("Varsha");
-console.log(list);
-console.log(displayDataArray <number> ([1,2,3]));
+// // Generics in ts - Generics in TypeScript allow developers to create reusable components that can work with multiple data types while maintaining type safety
+// function displayData <type_parameter> (parameter: type_parameter) : type_parameter {
+//     // return "abc"; type string is not assignable to type type_parameter as return type of function is type_parameter
+//     return parameter;
+// }
+// console.log(displayData <string> ("hello"));
+// console.log(displayData <number> (1));
+// function displayDataArray <type_parameter> (parameter: type_parameter[]) : type_parameter[] {
+//     // parameter.push(34); // will not work as number is not assignable to type type_parameter as parameter is of type type_parameter[]
+//     return parameter;
+// }
+// let list = displayDataArray <string> (["Vishal","Namrata"]);
+// // let list1 = displayDataArray <number> (["Vishal","Namrata"]); // will not work as string is not assignable to type number as parameter is of type type_parameter[] and type_parameter is number in this case
+// console.log(list);
+// list.push("Varsha");
+// console.log(list);
+// console.log(displayDataArray <number> ([1,2,3]));
+// // Generic classes
+// class GenericClass<T,V> {
+//     private a:T;
+//     private x:V;
+//     constructor(b:T, c:V) {
+//         this.a=b;
+//         this.x=c;
+//     }
+//     getA():T {
+//         return this.a;
+//     }
+//     getX() : V {
+//         return this.x;
+//     }
+// }
+// let c = new GenericClass<number,string>(6,"Vishal");
+// console.log(c.getA());
+// console.log(c.getX());
+// let c1 = new GenericClass<string, number>("Hello", 67);
+// console.log(c1.getA());
+// console.log(c1.getX());
+
+// // Static members in TypeScript are properties or methods that belong to the class itself rather than to any instance of the class. They can be accessed directly using the class name without creating an instance of the class. Static members are shared among all instances of the class, meaning that they have the same value for every instance. They are often used for utility functions, constants, or to keep track of information that is common to all instances of a class.
+// class Demo {
+//     static c:number=0;
+//     constructor() {
+//         Demo.c++; // only c will not work as c is static and belongs to class not instance
+//     }
+//     getCount():number {
+//         return Demo.c;
+//     }
+
+//     static getCountstatic():number {
+//         return Demo.c;
+//     }
+// }
+// let obj1 = new Demo();
+// let obj2 = new Demo();
+// console.log(obj2.getCount()); // 2
+// console.log(Demo.getCountstatic())
+
+// Types of generic classes in TypeScript
+//-  class GenericClass<T> {} - single type parameter
+// - class GenericClass<T, U> {} - multiple type parameters
+// - class GenericClass<T extends SomeType> {} - bound = constrained by SomeType for say number
+// - class GenericClass<T = DefaultType> {} - default type parameter for say string
+
+// // Type Assertions allow you to explicitly define a type when TypeScript cannot infer it automatically. They do not change the actual data but instruct TypeScript to treat a value as a specific type.
+// let someValue: any = "This is a string";
+// let strLength: number = (someValue as string).length;
+// let strLength1: number = (<string>someValue).length;
+// console.log(strLength,strLength1);
+
+// // Template literal types in TypeScript allow the construction of new string literal types by combining existing string literal types using template literal syntax.
+// type size = "small" | "medium" | "large";
+// type sizeLiteral = `The size of item is ${size}`;
+// let smallSizeItem:sizeLiteral = "The size of item is small";
+// // let extraSizeItem:sizeLiteral = "The size of item is extra-large"; // gives error as extra-large is not assignalbe to small|medium|large
+// console.log(smallSizeItem);
+
