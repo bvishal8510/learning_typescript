@@ -341,3 +341,29 @@
 // // let extraSizeItem:sizeLiteral = "The size of item is extra-large"; // gives error as extra-large is not assignalbe to small|medium|large
 // console.log(smallSizeItem);
 
+// // Recursive Types and Interfaces
+// interface listNode {
+//     data: number | string,
+//     next : listNode | null
+// }
+// type listNodeType = {
+//     data : number | string,
+//     next : listNodeType[] | null
+// }
+// let node1: listNode = { data: 1, next: null };
+// let node2: listNode = { data: 2, next: node1 };
+// console.log(node2);
+// let nodet1: listNodeType = { data:3, next:null};
+// let nodet2: listNodeType = {data:4, next:[nodet1]};
+// nodet2.next?.push(nodet1);
+// console.log(nodet2)
+// type RecursiveFunction = () => RecursiveFunction | null;
+// let recursive:RecursiveFunction = () => {
+//     return recursive();
+// }
+
+// import { add, multiply } from './math';
+// console.log(add(5,8))
+// console.log(multiply(5,8))
+// import { myspace } from './math';
+// console.log(myspace.add(4,5));
