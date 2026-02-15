@@ -367,3 +367,10 @@
 // console.log(multiply(5,8))
 // import { myspace } from './math';
 // console.log(myspace.add(4,5));
+
+// // The never type is used for functions that never return, such as those that throw errors or run infinite loops
+// function throwError(message: string): never {
+//     throw new Error(message);
+// }
+
+// https://www.geeksforgeeks.org/typescript/typescript-interview-questions/

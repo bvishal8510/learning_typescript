@@ -1,8 +1,6 @@
-"use strict";
 // let msg;
 // msg = 1;
 // console.log(msg);
-Object.defineProperty(exports, "__esModule", { value: true });
 // class demo {
 //     private num1: number = 2;
 //     public num3: number = 4;
@@ -339,5 +337,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import { add, multiply } from './math';
 // console.log(add(5,8))
 // console.log(multiply(5,8))
-var math_1 = require("./math");
-console.log(math_1.myspace.add(4, 5));
+// import { myspace } from './math';
+// console.log(myspace.add(4,5));
+// // The never type is used for functions that never return, such as those that throw errors or run infinite loops
+// function throwError(message: string): never {
+//     throw new Error(message);
+// }
+var data = localStorage.getItem("name");
+console.log(data);
+var localStorageData = localStorage.setItem("name", "Vishal");
+data = localStorage.getItem("name");
+console.log(data);
+localStorage.removeItem("name");
+data = localStorage.getItem("name");
+console.log(data);

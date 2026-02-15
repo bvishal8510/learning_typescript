@@ -12,6 +12,11 @@
   "types": "./demo.d.ts",
   "devDependencies": {
     "@types/node": "^25.2.3",
+    "@types/uuid": "^8.3.4",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "uuid": "^8.3.2"
   }
 }
